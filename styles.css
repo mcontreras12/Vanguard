@@ -68,6 +68,14 @@ table {
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
+body {
+    min-width: 400px;
+    font-family: 'Inter,' sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.5;
+}
+
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
@@ -76,7 +84,7 @@ table {
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+ #innovation {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -84,18 +92,57 @@ table {
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    color: var(--white);
+    font-family: var(--font);
+}
+
+#innovation h2 {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+#innovation p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+#innovation .container{
+    max-width: 500px;
+}
+
+#innovation button {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#innovation button:hover {
+    background-color: var(--red);
+    transform: scale(1.05);
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
+ header h1::before {
     content: "";
-
+    position: absolute;
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
 }
+
+header h1 {
+    position: relative;
+    padding-left: 3.5rem;
+}
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
