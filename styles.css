@@ -244,6 +244,35 @@ nav h2, nav ul {
     font-size: 15px;
 }
 
+#results {
+    background-color: var(--blue);
+    padding: 3rem 0;
+    color: var(--white);
+    font-family: var(--font);
+}
+
+#results h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    padding-left: 15px;
+}
+
+#results > .container > p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+}
+
+#profits h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
