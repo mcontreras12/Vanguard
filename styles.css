@@ -584,6 +584,7 @@ footer a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+  
   nav li a {
     display:  inline-block;
 }
