@@ -173,6 +173,7 @@ header {
     color: var(--white);
     padding: 2rem 0;
     position: relative;
+    padding-bottom: 0.2rem;
 }
 
 header .container {
@@ -181,10 +182,109 @@ header .container {
     align-items: center;
 }
 
-nav h2, nav ul {
-    display: none;
+/* nav menu hamburger*/
+
+nav {
+    position: relative;
+    top: -4.5rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
+nav ul {
+  width: 180px;
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+  overflow: hidden;
+  text-align: center;
+  max-height: 0;
+  background-color: var(--black);
+}
+nav h2 {
+  visibility: hidden;
+  height: 1px;
+}
+nav li a {
+  display: block;
+  font-family: var(--font);
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--blue);
+  transition: background-color .3s ease-in;
+}
+nav a:hover, nav input:hover {
+    background-color: var(--blue);
+    color: var(--black);
+}
+
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+}
+
+label span {
+    background-color: white;
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 2rem;
+}
+
+label span:before, label span:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: .75rem;
+}
+label span:after {
+    top: -.75rem;
+}
+input {
+  display:none;
+}
+
+input:checked ~ ul {
+    max-height: 500px;
+}
+
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+    align-items: right;
+}
+
+@media screen and (min-width: 600px){
+  nav ul {
+    overflow: visible;
+    position: absolute;
+    top: 1.5rem;
+    left:.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  nav li a {
+    display:  inline-block;
+}
+  label span, input {
+    display: none;
+  }
+}
+
+/* expertise section */
 #expertise {
     background-color: var(--white);
     padding: 3rem 0 2rem;
@@ -206,6 +306,7 @@ nav h2, nav ul {
     font-size: 15px;
 }
 
+/*offer section */
 #offer {
     padding-bottom: 3rem;
     font-family: var(--font);
@@ -219,6 +320,7 @@ nav h2, nav ul {
     padding-left: 25px;
 }
 
+/* offer cards */
 .card {
     background-color: var(--blue);
     color: var(--white);
@@ -244,6 +346,7 @@ nav h2, nav ul {
     font-size: 15px;
 }
 
+/* proven results section */
 #results {
     background-color: var(--blue);
     padding: 3rem 0;
@@ -261,7 +364,7 @@ nav h2, nav ul {
 #results > .container > p {
     font-size: 1rem;
     line-height: 1.8;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     max-width: 90%;
 }
 
@@ -269,20 +372,42 @@ nav h2, nav ul {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
+    padding-left: 15px;
 }
 
-/* PROFIT TABLE GOES HERE */
+/*profits tables */
+#profits table {
+    width: 450px;
+    border-collapse: collapse;
+    background-color: var(--black);
+}
 
+#profits th, td {
+    border: 1px solid var(--charcoal);
+    padding: 15px;
+    text-align: center;
+    font-family: var(--font);
+    color: var(--white);
+    font-weight: 600;
+}
 
+#profits th {
+    background-color: var(--black);
+}
 
+#profits tr:nth-child(odd) {
+    background-color: var(--charcoal);
+}
 
+#chart h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    margin-top: 25px;
+    padding-left: 15px;
+}
 
-
-
-
-
-
-
+/* contact section */
 #contact {
     background-color: var(--black);
     color: var(--white);
@@ -294,6 +419,7 @@ nav h2, nav ul {
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
+    padding-left: 15px;
 }
 
 #contact .container > p {
@@ -303,6 +429,7 @@ nav h2, nav ul {
     max-width: 90%;
 }
 
+/* submission section with text boxes */
 form {
     display: flex;
     flex-direction: column;
@@ -353,6 +480,7 @@ form button:hover {
     transform: scale(1.05);
 }
 
+/* footer section with contact info */
 footer {
     background-color: var(--black);
     color: var(--white);
