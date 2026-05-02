@@ -196,12 +196,15 @@ nav {
 nav ul {
   width: 180px;
   margin: 0;
-  padding: 1rem 0;
+  margin-top: -3.3rem;
+  padding: 0;
   list-style: none;
   overflow: hidden;
   text-align: center;
   max-height: 0;
   background-color: var(--black);
+  margin-right: 15rem;
+  max-width: relative;
 }
 nav h2 {
   visibility: hidden;
@@ -251,10 +254,12 @@ label span:before, label span:after {
 label span:before {
     top: .75rem;
 }
+
 label span:after {
     top: -.75rem;
 }
-input {
+
+#menu-toggle {
   display:none;
 }
 
@@ -265,23 +270,6 @@ input:checked ~ ul {
 input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
     align-items: right;
-}
-
-@media screen and (min-width: 600px){
-  nav ul {
-    overflow: visible;
-    position: absolute;
-    top: 1.5rem;
-    left:.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  nav li a {
-    display:  inline-block;
-}
-  label span, input {
-    display: none;
-  }
 }
 
 /* expertise section */
@@ -434,15 +422,17 @@ form {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    position: relative;
 }
 
-form label {
+#form-label {
     font-size: 1rem;
     font-weight: 500;
     margin-top: 1rem;
+    width: relative;
 }
 
-form input, form textarea {
+#form, form textarea {
     width: 420px;
     height: 50px;
     border: 3px solid var(--blue);
@@ -450,15 +440,19 @@ form input, form textarea {
     padding: 10px;
     font-size: 1rem;
     font-family: var(--font);
+    position: relative;
+    width: relative;
 }
 
-form input {
+#form {
     height: 1.5rem;
+    width: relative;
 }
 
 form textarea {
     min-height: 5rem;
     resize: vertical;
+    width: relative;
 }
 
 form button {
@@ -472,7 +466,7 @@ form button {
     font-weight: 700;
     cursor: pointer;
     transition: .3s ease;
-    width: 445px;
+    width: relative;
 }
 
 form button:hover {
@@ -550,7 +544,7 @@ footer a {
 
 
 /* MEDIA QUERIES (MEDIUM) */ 
-
+@media screen and (min-width: 800px) {
     #results {
         grid-template-columns: 1fr 1fr;
     }
@@ -564,6 +558,56 @@ footer a {
     .bar-chart {
         width: 50%;
     }
-
+}
 
 /* MEDIA QUERIES (LARGE) */
+
+@media screen and (min-width: 1024px) {
+    #results {
+        grid-template-columns: 1fr 1fr;
+    }
+    .results-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .results-table {
+        width: 50%;
+    }
+    .bar-chart {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 800px){
+  nav ul {
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  nav li a {
+    display:  inline-block;
+}
+  label span, input {
+    display: none;
+  }
+  #form-label, form {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  nav ul {
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  nav li a {
+    display:  inline-block;
+}
+  label span, input {
+    display: none;
+  }
+  #form-label, form {
+    visibility: visible;
+  }
+}
